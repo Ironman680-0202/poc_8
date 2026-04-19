@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication {
+public class demoapplication {
 
     @GetMapping("/")
     public String home() {
