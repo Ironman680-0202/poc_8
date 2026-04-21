@@ -10,7 +10,7 @@ public class demoapplication {
 
     @GetMapping("/")
     public String home() {
-        return "Hello from Java + Docker + Jenkins 🚀";
+        return "Hello from Java + Docker + Jenkins + SonarQube 🚀";
     }
 
     public static void main(String[] args) {
