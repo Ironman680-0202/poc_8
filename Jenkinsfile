@@ -54,7 +54,10 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 8081:8080 $DOCKER_IMAGE:latest'
+                sh '''
+                docker rm -f java-app || true
+                docker run -d -p 8081:8080 $DOCKER_IMAGE:latest
+                '''
             }
         }
     }
