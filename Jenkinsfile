@@ -26,7 +26,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=poc_1'
+                    sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=poc1'
                 }
             }
         }
