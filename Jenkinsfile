@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = "sandeep680/poc_1"
+        DOCKER_IMAGE = "sandeep680/poc_8"
     }
 
     stages {
@@ -33,7 +33,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t sandeep680/poc_1:latest .'
+                sh 'docker build -t sandeep680/poc_8:latest .'
             }
         }
 
@@ -46,7 +46,7 @@ pipeline {
                 )]) {
                     sh '''
                     docker login -u $USER -p $PASS
-                    docker push sandeep680/poc_1:latest
+                    docker push sandeep680/poc_8:latest
                     '''
                 }
             }
@@ -55,8 +55,8 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh '''
-                docker rm -f poc_1 || true
-                docker run -d -p 8081:8080 --name poc_1 sandeep680/poc_1:latest
+                docker rm -f poc_8 || true
+                docker run -d -p 8081:8080 --name poc_8 sandeep680/poc_8:latest
                 '''
             }
         }
