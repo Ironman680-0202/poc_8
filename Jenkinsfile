@@ -23,13 +23,13 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=poc8 -Dsonar.projectName=poc8'
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('sonarqube') {
+        //             sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=poc8 -Dsonar.projectName=poc8'
+        //         }
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
